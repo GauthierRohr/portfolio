@@ -32,7 +32,7 @@ const translations = {
 		hero: {
 			subtitle: 'Étudiant Développeur · 42 Lausanne',
 			description:
-				'Ancien externe en médecine reconverti dans la tech.\nJ\'ai appris à coder en C et C++ à 42 Lausanne et je m\'amuse à créer des apps web dans mon temps libre.',
+				'Ancien externe en médecine reconverti dans la tech.\nJ\'ai appris à coder en C et C++ à 42 Lausanne et je développe des apps web dans mon temps libre.',
 			cta1: 'Voir mes projets',
 			cta2: 'Me contacter',
 		},
