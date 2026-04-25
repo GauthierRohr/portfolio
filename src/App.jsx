@@ -32,7 +32,7 @@ const translations = {
 		hero: {
 			subtitle: 'Étudiant Développeur · 42 Lausanne',
 			description:
-				'Ancien externe en médecine reconverti dans la tech.\nJ\'ai appris à coder en C et C++ à 42 Lausanne et je développe des apps web dans mon temps libre.',
+				'Ancien externe en médecine reconverti dans la tech.\nJ\'ai appris à coder en C et C++ à 42 Lausanne et je développe des apps web pendant mon temps libre.',
 			cta1: 'Voir mes projets',
 			cta2: 'Me contacter',
 		},
@@ -190,7 +190,8 @@ export default function App() {
 		<div className="w-full bg-gray-900 text-white">
 			{/* Navbar + Language selector */}
 			<nav className="fixed top-0 left-0 right-0 bg-gray-900/90 backdrop-blur-sm z-10 border-b border-gray-800">
-				<div className="relative flex items-center justify-center py-3 sm:py-4">
+				<div className="flex items-center px-3 sm:px-4 py-3 sm:py-4">
+					<div className="flex-1" />
 					<ul className="flex justify-center space-x-3 sm:space-x-8">
 						{t.nav.map((item, i) => (
 							<li key={item} className="nav-item">
@@ -203,13 +204,15 @@ export default function App() {
 							</li>
 						))}
 					</ul>
-					<div className="absolute right-3 sm:right-4 flex space-x-2">
-						<button onClick={() => setLanguage('fr')} className="lang-btn">
-							<img src="https://flagcdn.com/w80/fr.png" alt="Français" className="w-7 h-4 sm:w-8 sm:h-5 object-cover rounded-sm" />
-						</button>
-						<button onClick={() => setLanguage('en')} className="lang-btn">
-							<img src="https://flagcdn.com/w80/gb.png" alt="English" className="w-7 h-4 sm:w-8 sm:h-5 object-cover rounded-sm" />
-						</button>
+					<div className="flex-1 flex justify-end">
+						<div className="flex flex-col sm:flex-row gap-1 sm:gap-2">
+							<button onClick={() => setLanguage('fr')} className="lang-btn">
+								<img src="https://flagcdn.com/w80/fr.png" alt="Français" className="w-7 h-4 sm:w-8 sm:h-5 object-cover rounded-sm" />
+							</button>
+							<button onClick={() => setLanguage('en')} className="lang-btn">
+								<img src="https://flagcdn.com/w80/gb.png" alt="English" className="w-7 h-4 sm:w-8 sm:h-5 object-cover rounded-sm" />
+							</button>
+						</div>
 					</div>
 				</div>
 			</nav>
