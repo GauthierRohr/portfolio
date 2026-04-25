@@ -32,7 +32,7 @@ const translations = {
     hero: {
       subtitle: 'Étudiant Développeur · 42 Lausanne',
       description:
-        'Ancien externe en médecine reconverti dans la tech. Je construis des applications web modernes avec une approche humaine et centrée utilisateur.',
+        'Ancien externe en médecine reconverti dans la tech.\nJ\'ai appris à coder en C et C++ à 42 Lausanne et je m\'amuse à créer des apps web dans mon temps libre.',
       cta1: 'Voir mes projets',
       cta2: 'Me contacter',
     },
@@ -101,7 +101,7 @@ const translations = {
     hero: {
       subtitle: 'Student Developer · 42 Lausanne',
       description:
-        'Former medical student turned tech. I build modern web applications with a user-centered approach to development.',
+        'Former medical student turned tech.\nI learned to code in C and C++ at 42 Lausanne and enjoy building web apps in my spare time.',
       cta1: 'View My Projects',
       cta2: 'Contact Me',
     },
@@ -223,7 +223,7 @@ export default function App() {
         />
         <h1 className="text-4xl font-bold mb-2">Gauthier Rohr</h1>
         <p className="text-blue-400 text-lg font-medium mb-4">{t.hero.subtitle}</p>
-        <p className="text-gray-400 max-w-lg mb-8 text-center leading-relaxed">
+        <p className="text-gray-400 max-w-lg mb-8 text-center leading-relaxed whitespace-pre-line">
           {t.hero.description}
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
@@ -256,8 +256,8 @@ export default function App() {
                   className={`relative rounded-2xl bg-gradient-to-br ${proj.gradient} p-8 flex flex-col justify-between shadow-xl`}
                 >
                   <div>
-                    <div className="text-5xl mb-5">{proj.icon}</div>
-                    <div className="flex items-center gap-3 mb-3">
+                    <div className="text-5xl mb-5 text-center">{proj.icon}</div>
+                    <div className="flex items-center gap-3 mb-3 justify-center">
                       <h3 className="text-2xl font-bold text-white">{data.name}</h3>
                       <span
                         className={`text-xs font-semibold px-2.5 py-1 rounded-full ${
@@ -269,13 +269,13 @@ export default function App() {
                         {data.status}
                       </span>
                     </div>
-                    <p className="text-white/80 leading-relaxed">{data.description}</p>
+                    <p className="text-white/80 leading-relaxed text-center">{data.description}</p>
                   </div>
                   <a
                     href={proj.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-7 inline-flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white font-semibold px-5 py-2.5 rounded-lg transition-all w-fit"
+                    className="mt-7 inline-flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white font-semibold px-5 py-2.5 rounded-lg transition-all w-fit mx-auto"
                   >
                     {t.personal.visitBtn}
                   </a>
@@ -300,9 +300,9 @@ export default function App() {
                   className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-blue-500/50 transition-colors flex flex-col justify-between"
                 >
                   <div>
-                    <h3 className="text-xl font-bold mb-2 text-white">{data.name}</h3>
-                    <p className="text-gray-400 text-sm leading-relaxed mb-4">{data.description}</p>
-                    <div className="flex flex-wrap gap-2 mb-5">
+                    <h3 className="text-xl font-bold mb-2 text-white text-center">{data.name}</h3>
+                    <p className="text-gray-400 text-sm leading-relaxed mb-4 text-center">{data.description}</p>
+                    <div className="flex flex-wrap gap-2 mb-5 justify-center">
                       {proj.tags.map((tag) => (
                         <span
                           key={tag}
@@ -318,13 +318,13 @@ export default function App() {
                       href={proj.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 font-medium transition-colors"
+                      className="inline-flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 font-medium transition-colors justify-center"
                     >
                       <GitHubIcon />
                       {t.school.githubBtn}
                     </a>
                   ) : (
-                    <span className="text-xs text-gray-600 italic">{t.school.soonLabel}</span>
+                    <span className="text-xs text-gray-600 italic text-center block">{t.school.soonLabel}</span>
                   )}
                 </div>
               );
