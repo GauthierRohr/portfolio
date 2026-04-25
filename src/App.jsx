@@ -188,30 +188,30 @@ export default function App() {
 
 	return (
 		<div className="w-full bg-gray-900 text-white">
-			{/* Language selector */}
-			<div className="fixed top-4 right-4 flex space-x-2 z-20">
-				<button onClick={() => setLanguage('fr')} className="lang-btn">
-					<img src="https://flagcdn.com/w80/fr.png" alt="Français" className="w-8 h-5 object-cover rounded-sm" />
-				</button>
-				<button onClick={() => setLanguage('en')} className="lang-btn">
-					<img src="https://flagcdn.com/w80/gb.png" alt="English" className="w-8 h-5 object-cover rounded-sm" />
-				</button>
-			</div>
-
-			{/* Navbar */}
+			{/* Navbar + Language selector */}
 			<nav className="fixed top-0 left-0 right-0 bg-gray-900/90 backdrop-blur-sm z-10 border-b border-gray-800">
-				<ul className="flex justify-center space-x-8 py-4">
-					{t.nav.map((item, i) => (
-						<li key={item} className="nav-item">
-							<button
-								onClick={() => scrollTo(t.navIds[i])}
-								className="nav-link text-lg font-semibold text-gray-300"
-							>
-								{item}
-							</button>
-						</li>
-					))}
-				</ul>
+				<div className="relative flex items-center justify-center py-3 sm:py-4">
+					<ul className="flex justify-center space-x-3 sm:space-x-8">
+						{t.nav.map((item, i) => (
+							<li key={item} className="nav-item">
+								<button
+									onClick={() => scrollTo(t.navIds[i])}
+									className="nav-link text-sm sm:text-lg font-semibold text-gray-300"
+								>
+									{item}
+								</button>
+							</li>
+						))}
+					</ul>
+					<div className="absolute right-3 sm:right-4 flex space-x-2">
+						<button onClick={() => setLanguage('fr')} className="lang-btn">
+							<img src="https://flagcdn.com/w80/fr.png" alt="Français" className="w-7 h-4 sm:w-8 sm:h-5 object-cover rounded-sm" />
+						</button>
+						<button onClick={() => setLanguage('en')} className="lang-btn">
+							<img src="https://flagcdn.com/w80/gb.png" alt="English" className="w-7 h-4 sm:w-8 sm:h-5 object-cover rounded-sm" />
+						</button>
+					</div>
+				</div>
 			</nav>
 
 			{/* ── Hero ── */}
@@ -219,11 +219,11 @@ export default function App() {
 				<img
 					src="pdp.PNG"
 					alt="Gauthier Rohr"
-					className="w-36 h-36 rounded-full mb-6 border-4 border-blue-500 object-cover shadow-xl shadow-blue-500/20"
+					className="w-28 h-28 sm:w-36 sm:h-36 rounded-full mb-6 border-4 border-blue-500 object-cover shadow-xl shadow-blue-500/20"
 				/>
-				<h1 className="text-4xl font-bold mb-2">Gauthier Rohr</h1>
-				<p className="text-blue-400 text-lg font-medium mb-4">{t.hero.subtitle}</p>
-				<p className="text-gray-400 max-w-lg mb-8 text-center leading-relaxed whitespace-pre-line">
+				<h1 className="text-3xl sm:text-4xl font-bold mb-2">Gauthier Rohr</h1>
+				<p className="text-blue-400 text-base sm:text-lg font-medium mb-4">{t.hero.subtitle}</p>
+				<p className="text-gray-400 max-w-lg mb-8 text-center leading-relaxed whitespace-pre-line px-2">
 					{t.hero.description}
 				</p>
 				<div className="flex flex-wrap gap-4 justify-center">
@@ -245,7 +245,7 @@ export default function App() {
 			{/* ── Personal Projects ── */}
 			<section id="projects" className="py-24 px-6">
 				<div className="max-w-5xl mx-auto">
-					<h2 className="text-3xl font-bold text-center mb-14">{t.personal.title}</h2>
+					<h2 className="text-2xl sm:text-3xl font-bold text-center mb-14">{t.personal.title}</h2>
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 						{personalProjects.map((proj) => {
 							const data = t.personal[proj.key];
@@ -253,7 +253,7 @@ export default function App() {
 							return (
 								<div
 									key={proj.key}
-									className={`relative rounded-2xl bg-gradient-to-br ${proj.gradient} p-8 flex flex-col justify-between shadow-xl`}
+									className={`relative rounded-2xl bg-gradient-to-br ${proj.gradient} p-5 sm:p-8 flex flex-col justify-between shadow-xl`}
 								>
 									<div>
 										<div className="text-5xl mb-5 text-center">{proj.icon}</div>
@@ -289,7 +289,7 @@ export default function App() {
 			{/* ── School Projects ── */}
 			<section id="school" className="py-24 px-6 bg-gray-800/40">
 				<div className="max-w-5xl mx-auto">
-					<h2 className="text-3xl font-bold text-center mb-2">{t.school.title}</h2>
+					<h2 className="text-2xl sm:text-3xl font-bold text-center mb-2">{t.school.title}</h2>
 					<p className="text-gray-500 text-center mb-14">{t.school.subtitle}</p>
 					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 						{schoolProjects.map((proj) => {
@@ -336,12 +336,12 @@ export default function App() {
 			{/* ── Contact ── */}
 			<section id="contact" className="py-24 px-6">
 				<div className="max-w-xl mx-auto text-center">
-					<h2 className="text-3xl font-bold mb-4">{t.contact.title}</h2>
+					<h2 className="text-2xl sm:text-3xl font-bold mb-4">{t.contact.title}</h2>
 					<p className="text-gray-400 mb-10 leading-relaxed">{t.contact.description}</p>
 					<div className="flex flex-col sm:flex-row gap-4 justify-center">
 						<a
 							href="mailto:rohr.gauthier@gmail.com"
-							className="custom-btn bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 inline-flex items-center gap-2 justify-center"
+							className="custom-btn bg-blue-600 text-white px-4 sm:px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 inline-flex items-center gap-2 justify-center text-sm sm:text-base"
 						>
 							<MailIcon />
 							rohr.gauthier@gmail.com
